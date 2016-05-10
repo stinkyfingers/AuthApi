@@ -13,7 +13,7 @@ import (
 )
 
 var (
-	listenAddr = flag.String("port", "8080", "Assign http port")
+	listenAddr = flag.String("port", "8082", "Assign http port")
 )
 
 func main() {

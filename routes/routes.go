@@ -44,6 +44,12 @@ var routes = []Route{
 		"/logout",
 		middleware.Handler{Handle: handlers.Logout},
 	},
+	Route{
+		"Authorize",
+		"POST",
+		"/authorize",
+		middleware.Handler{Handle: handlers.Authorize, Middlewares: tokenAuthMiddleware},
+	},
 }
 
 //status checks db connection and returns status

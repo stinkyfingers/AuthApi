@@ -12,7 +12,7 @@ import (
 )
 
 type User struct {
-	ID       bson.ObjectId `json:"_id,omitempty" bson:"_id,omitempty"`
+	ID       bson.ObjectId `json:"id,omitempty" bson:"_id,omitempty"`
 	Username string        `json:"username,omitempty" bson:"username,omitempty"`
 	Password string        `json:"-" bson:"password,omitempty"`
 	JWT      string        `json:"jwt,omitempty" bson:"jwt,omitempty"`

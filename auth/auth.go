@@ -48,7 +48,10 @@ func (u *User) Login() error {
 
 	//set jwt
 	token := jwt.New(jwt.SigningMethodHS256)
-	token.Claims["exp"] = time.Now().Add(time.Hour * 24).Unix()
+	claims := jwt.MapClaims{
+		"exp": time.Now().Add(time.Hour * 24).Unix(),
+	}
+	token.Claims = claims
 
 	u.JWT, err = token.SignedString(TOKEN_SIGNING_KEY)
 	if err != nil {
